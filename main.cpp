@@ -5,6 +5,9 @@
 
 int main(int argc, char ** argv) 
 {
+/*
+a lot of code improvements
+*/
     Board board;
     Input input;
     Render render;
