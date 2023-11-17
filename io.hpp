@@ -5,6 +5,7 @@
 #endif
 
 #include <cstdlib>
+#include <cstdio>
 
 class IO
 {

@@ -6,10 +6,16 @@
 
 struct Loop
 {
+	explicit Loop(Configuration &config)
+	: config(config)
+	{
+
+	}
+
     void Run(Input& input, Board& board, Render& render)
     {
-        Game game(board);
-        render.drawBoard(board);
+        Game game(board, config);
+	    render.renderBoard(board);
 
         while(true)
         {
@@ -18,7 +24,9 @@ struct Loop
                 break;
             if(!game.nextStep(command))
                 break;
-            render.drawBoard(board);
+	        render.renderBoard(board);
         }
     }
+
+	Configuration config;
 };

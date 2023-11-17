@@ -1,3 +1,4 @@
+#include "configuration.h"
 #include "board.hpp"
 #include "input.hpp"
 #include "render.hpp"
@@ -5,10 +6,13 @@
 
 int main(int argc, char ** argv) 
 {
-    Board board;
+	Configuration config;
+	config.initConfiguration();
+
+    Board board(config.board_config);
     Input input;
-    Render render;
-    Loop loop;
+    Render render(config);
+    Loop loop(config);
 
     loop.Run(input, board, render);
 }
